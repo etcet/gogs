@@ -111,8 +111,8 @@ DSA     = 1024
 ; Either "mysql", "postgres" or "sqlite3", it's your choice
 DB_TYPE = mysql
 HOST = 127.0.0.1:3306
-NAME = gogs
-USER = root
+NAME = {{ getenv "MYSQL_DATABASE" }}
+USER = {{ getenv "MYSQL_USER" }}
 PASSWD =
 ; For "postgres" only, either "disable", "require" or "verify-full"
 SSL_MODE = disable
