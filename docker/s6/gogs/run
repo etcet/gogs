@@ -5,4 +5,8 @@ if test -f ./setup; then
 fi
 
 export USER=git
+
+export GOGS_APP_NAME=${GOGS_APP_NAME:-"Gogs: Go Git Service"}
+/app/gogs/confd -onetime -backend env
+
 exec gosu $USER /app/gogs/gogs web
