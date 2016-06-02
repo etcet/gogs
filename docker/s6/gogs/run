@@ -7,8 +7,11 @@ fi
 export USER=git
 
 export GOGS_APP_NAME=${GOGS_APP_NAME:-"Gogs: Go Git Service"}
+export GOGS_DOMAIN=${GOGS_DOMAIN:-"localhost"}
+export GOGS_SSH_PORT=${SSH_PORT:-"10022"}
 export MYSQL_DATABASE=${MYSQL_DATABASE:-"gogs"}
 export MYSQL_USER=${MYSQL_USER:-"gogs"}
+export MYSQL_PASSWORD=${MYSQL_PASSWORD:-""}
 /app/gogs/confd -onetime -backend env
 chown -R git:git /data /app/gogs ~git/
 chmod 0755 /data /data/gogs ~git/
