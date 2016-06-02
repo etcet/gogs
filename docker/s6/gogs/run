@@ -8,5 +8,7 @@ export USER=git
 
 export GOGS_APP_NAME=${GOGS_APP_NAME:-"Gogs: Go Git Service"}
 /app/gogs/confd -onetime -backend env
+chown -R git:git /data /app/gogs ~git/
+chmod 0755 /data /data/gogs ~git/
 
 exec gosu $USER /app/gogs/gogs web
