@@ -1,0 +1,10 @@
+[template]
+ src   = "app.ini.tmpl"
+ dest  = "/data/gogs/conf/app.ini"
+ owner = "git"
+ group = "git"
+ mode  = "0644"
+ keys = [
+ "/gogs/app/name",
+ ]
+ reload_cmd = "killall gogs"
